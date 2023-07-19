@@ -36,7 +36,7 @@ def move_source(working_dir='hotdir', new_destination_filename='', failed=False,
 def write_to_server_documents(data, filename, custom_path=None):
     destination = f"../server/storage/documents/custom-documents"
     if custom_path:
-        destination = f"../server/storage/documents/{custom_path}"
+        destination = destination + f"/{custom_path}"
     if not os.path.exists(destination):
         os.makedirs(destination)
     with open(f"{destination}/{filename}.json", 'w', encoding='utf-8') as file:

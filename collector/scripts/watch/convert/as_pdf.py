@@ -1,11 +1,11 @@
 import os
 
+from ftfy import fix_text
 from langchain.document_loaders import PyPDFLoader
 from slugify import slugify
 
 from ..utils import guid, file_creation_time, write_to_server_documents, move_source
 from ...utils import tokenize
-from ftfy import fix_text
 
 
 # Process all text-related documents.
@@ -13,7 +13,7 @@ def as_pdf(**kwargs):
     parent_dir = kwargs.get('directory', 'hotdir')
     filename = kwargs.get('filename')
     ext = kwargs.get('ext', '.txt')
-    remove = kwargs.get('remove_on_complete', False)
+    remove = False
     fullpath = f"{parent_dir}/{filename}{ext}"
 
     loader = PyPDFLoader(fullpath)
@@ -35,7 +35,7 @@ def as_pdf(**kwargs):
             'pageContent': content,
             'token_count_estimate': len(tokenize(content))
         }
-        write_to_server_documents(data, f"{slugify(filename)}-pg{pg_num}-{data.get('id')}")
+        write_to_server_documents(data, f"{slugify(filename)}-pg{pg_num}-{data.get('id')}", custom_path=slugify(filename)[:20])
 
     move_source(parent_dir, f"{filename}{ext}", remove=remove)
     print(f"[SUCCESS]: {filename}{ext} converted & ready for embedding.\n")
