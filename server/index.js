@@ -18,11 +18,12 @@ const app = express();
 const apiRouter = express.Router();
 
 app.use(cors({ origin: true }));
-app.use(bodyParser.text());
-app.use(bodyParser.json());
+app.use(bodyParser.text({limit: "10mb"}));
+app.use(bodyParser.json({limit: "10mb"}));
 app.use(
-  bodyParser.urlencoded({
-    extended: true,
+    bodyParser.urlencoded({
+	limit: "10mb",
+	extended: true,
   })
 );
 
