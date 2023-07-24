@@ -7,6 +7,7 @@ import {
   Menu,
   Plus,
   Tool,
+  CheckSquare
 } from "react-feather";
 import IndexCount from "./IndexCount";
 import LLMStatus from "./LLMStatus";
@@ -18,6 +19,7 @@ import NewWorkspaceModal, {
 } from "../Modals/NewWorkspace";
 import ActiveWorkspaces from "./ActiveWorkspaces";
 import paths from "../../utils/paths";
+import { isDev } from '../../utils/featureflag.js';
 import Discord from "../Icons/Discord";
 
 export default function Sidebar() {
@@ -37,15 +39,17 @@ export default function Sidebar() {
     <>
       <div
         ref={sidebarRef}
-        style={{ height: "calc(100% - 32px)" }}
-        className="transition-all duration-500 relative m-[16px] rounded-[26px] bg-white dark:bg-black-900 min-w-[15.5%] p-[18px] "
+        className="transition-all duration-500 relative my-[16px] mx-2 rounded-lg bg-white dark:bg-black-900 max-w-[20%] p-[18px] shadow-lg"
       >
         <div className="w-full h-full flex flex-col overflow-x-hidden items-between">
           {/* Header Information */}
           <div className="flex w-full items-center justify-between">
-            <p className="text-xl font-base text-slate-600 dark:text-slate-200">
-              AnythingLLM
-            </p>
+			<a className="flex">
+				<CheckSquare/>
+				<p className="ml-2 text-xl font-base text-slate-600 dark:text-slate-200" style={{fontSize: '1.2rem'}}>
+				   ecocheckr
+				</p>
+			</a>
             <div className="flex gap-x-2 items-center text-slate-500">
               <button
                 onClick={showSystemSettingsModal}
@@ -59,8 +63,9 @@ export default function Sidebar() {
           {/* Primary Body */}
           <div className="h-[100%] flex flex-col w-full justify-between pt-4 overflow-y-hidden">
             <div className="h-auto sidebar-items dark:sidebar-items">
-              <div className="flex flex-col gap-y-4 h-[65vh] pb-8 overflow-y-scroll no-scroll">
-                <div className="flex gap-x-2 items-center justify-between">
+              <div className="flex flex-row flex-wrap gap-y-4  pb-8 overflow-y-scroll no-scroll">
+
+			    {isDev && <div className="flex gap-x-2 items-center justify-between">
                   <button
                     onClick={showNewWsModal}
                     className="flex flex-grow w-[75%] h-[36px] gap-x-2 py-[5px] px-4 border border-slate-400 rounded-lg text-slate-800 dark:text-slate-200 justify-start items-center hover:bg-slate-100 dark:hover:bg-stone-900"
@@ -70,7 +75,7 @@ export default function Sidebar() {
                       New workspace
                     </p>
                   </button>
-                </div>
+                </div>}
                 <ActiveWorkspaces />
               </div>
             </div>
@@ -80,56 +85,6 @@ export default function Sidebar() {
                   <LLMStatus />
                   <IndexCount />
                 </div>
-                <a
-                  href={paths.hosting()}
-                  target="_blank"
-                  className="flex flex-grow w-[100%] h-[36px] gap-x-2 py-[5px] px-4 border border-slate-400 dark:border-transparent rounded-lg text-slate-800 dark:text-slate-200 justify-center items-center hover:bg-slate-100 dark:bg-stone-800 dark:hover:bg-stone-900"
-                >
-                  <Cpu className="h-4 w-4" />
-                  <p className="text-slate-800 dark:text-slate-200 text-xs leading-loose font-semibold">
-                    Managed cloud hosting
-                  </p>
-                </a>
-                <a
-                  href={paths.hosting()}
-                  target="_blank"
-                  className="flex flex-grow w-[100%] h-[36px] gap-x-2 py-[5px] px-4 border border-slate-400 dark:border-transparent rounded-lg text-slate-800 dark:text-slate-200 justify-center items-center hover:bg-slate-100  dark:bg-stone-800 dark:hover:bg-stone-900"
-                >
-                  <Briefcase className="h-4 w-4" />
-                  <p className="text-slate-800 dark:text-slate-200 text-xs leading-loose font-semibold">
-                    Enterprise Installation
-                  </p>
-                </a>
-              </div>
-
-              {/* Footer */}
-              <div className="flex items-end justify-between mt-2">
-                <div className="flex gap-x-1 items-center">
-                  <a
-                    href={paths.github()}
-                    className="transition-all duration-300 p-2 rounded-full bg-slate-200 text-slate-400 dark:bg-slate-800 hover:bg-slate-800 hover:text-slate-200 dark:hover:text-slate-200"
-                  >
-                    <GitHub className="h-4 w-4 " />
-                  </a>
-                  <a
-                    href={paths.docs()}
-                    className="transition-all duration-300 p-2 rounded-full bg-slate-200 text-slate-400 dark:bg-slate-800 hover:bg-slate-800 hover:text-slate-200 dark:hover:text-slate-200"
-                  >
-                    <BookOpen className="h-4 w-4 " />
-                  </a>
-                  <a
-                    href={paths.discord()}
-                    className="transition-all duration-300 p-2 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-slate-800 group"
-                  >
-                    <Discord className="h-4 w-4 stroke-slate-400 group-hover:stroke-slate-200 dark:group-hover:stroke-slate-200" />
-                  </a>
-                </div>
-                <a
-                  href={paths.mailToMintplex()}
-                  className="transition-all duration-300 text-xs text-slate-200 dark:text-slate-600 hover:text-blue-600 dark:hover:text-blue-400"
-                >
-                  @MintplexLabs
-                </a>
               </div>
             </div>
           </div>

@@ -84,10 +84,10 @@ app.all("*", function (_, response) {
 });
 
 app
-  .listen(process.env.SERVER_PORT || 3001, async () => {
+  .listen(process.env.SERVER_PORT || 80, async () => {
     await validateTablePragmas();
     console.log(
-      `Example app listening on port ${process.env.SERVER_PORT || 3001}`
+      `Example app listening on port ${process.env.SERVER_PORT || 80}`
     );
   })
   .on("error", function (err) {

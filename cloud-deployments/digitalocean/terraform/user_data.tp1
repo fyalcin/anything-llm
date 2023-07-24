@@ -14,7 +14,7 @@ sudo systemctl start docker
   
 sudo apt-get install -y git  
   
-git clone https://github.com/Mintplex-Labs/anything-llm.git /home/anything-llm  
+git clone https://github.com/ecocheckr/ecocheckr.git /home/anything-llm  
 cd /home/anything-llm/docker  
   
 cat >> .env << END
@@ -49,11 +49,11 @@ echo "SQLite DB placeholder set."
 sudo docker container exec -u 0 -t $(sudo docker ps --latest --quiet) chown -R anythingllm:anythingllm /app/collector /app/server  
 echo "File permissions corrected."  
   
-export ONLINE=$(curl -Is http://localhost:3001/api/ping | head -n 1|cut -d$' ' -f2)  
+export ONLINE=$(curl -Is http://localhost:80/api/ping | head -n 1|cut -d$' ' -f2)  
 echo "Health check: $ONLINE"  
   
 if [ "$ONLINE" = 200 ]; then  
-  echo "Running migrations..." && curl -Is http://localhost:3001/api/migrate | head -n 1 | cut -d$' ' -f2  
+  echo "Running migrations..." && curl -Is http://localhost:80/api/migrate | head -n 1 | cut -d$' ' -f2  
 fi  
   
 echo "Setup complete! AnythingLLM instance is now online!"  

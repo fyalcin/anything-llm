@@ -11,7 +11,7 @@ terraform {
 
 provider "digitalocean" {  
   # Add your DigitalOcean API token here  
-  token = "DigitalOcean API token"  
+  token = "dop_v1_307005d41e77af238718b982f32c64c525dc88f691caac2b89ee82ba621b82f8"  
 }  
 
   

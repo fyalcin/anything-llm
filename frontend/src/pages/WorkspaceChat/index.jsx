@@ -16,7 +16,7 @@ export default function WorkspaceChat() {
     return (
       <>
         {requiresAuth && <PasswordModal />}
-        <div className="w-screen h-screen overflow-hidden bg-orange-100 dark:bg-stone-700 flex">
+        <div className="w-screen h-screen overflow-hidden bg-primary dark:bg-stone-700 flex-col">
           {!isMobile && <SidebarPlaceholder />}
           <ChatPlaceholder />
         </div>
@@ -34,8 +34,10 @@ function ShowWorkspaceChat() {
 
   useEffect(() => {
     async function getWorkspace() {
-      if (!slug) return;
-      const _workspace = await Workspace.bySlug(slug);
+	  const _slug = slug ? slug : "environmental-claims"
+      const _workspace = await Workspace.bySlug(_slug);
+	  console.log(_workspace, _slug)
+	  if (!_workspace) return;
       setWorkspace(_workspace);
       setLoading(false);
     }
@@ -43,7 +45,7 @@ function ShowWorkspaceChat() {
   }, []);
 
   return (
-    <div className="w-screen h-screen overflow-hidden bg-orange-100 dark:bg-stone-700 flex">
+    <div className="w-screen h-screen overflow-hidden bg-primary dark:bg-stone-700 flex">
       {!isMobile && <Sidebar />}
       <WorkspaceChatContainer loading={loading} workspace={workspace} />
     </div>

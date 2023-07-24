@@ -10,7 +10,7 @@ export default function App() {
     <Suspense fallback={<div />}>
       <ContextWrapper>
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<WorkspaceChat />} />
           <Route path="/workspace/:slug" element={<WorkspaceChat />} />
         </Routes>
       </ContextWrapper>

@@ -32,7 +32,7 @@ export default function PasswordModal() {
           <div className="relative bg-white rounded-lg shadow dark:bg-stone-700">
             <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
               <h3 className="text-md md:text-xl font-semibold text-gray-900 dark:text-white">
-                This workspace is password protected.
+                You need a password to try Ecocheckr Beta!
               </h3>
             </div>
             <div className="p-6 space-y-6 flex h-full w-full">

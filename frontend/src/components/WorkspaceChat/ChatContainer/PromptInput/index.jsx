@@ -84,9 +84,7 @@ export default function PromptInput({
             value={message}
             className="cursor-text max-h-[100px] md:min-h-[40px] block mx-2 md:mx-4 p-2.5 w-full text-[16px] md:text-sm rounded-lg border bg-gray-50 border-gray-300 placeholder-gray-400 text-gray-900 dark:text-white dark:bg-stone-600 dark:border-stone-700 dark:placeholder-stone-400"
             placeholder={
-              isMobile
-                ? "Enter your message here."
-                : "Shift + Enter for newline. Enter to submit."
+                "Ask Ecochecker.."
             }
           />
           <button
@@ -138,9 +136,6 @@ const Tracking = memo(({ workspaceSlug }) => {
 
   return (
     <div className="flex flex-col md:flex-row w-full justify-center items-center gap-2 mb-2 px-4 mx:px-0">
-      <p className="bg-stone-600 text-slate-400 text-xs px-2 rounded-lg font-mono text-center">
-        Chat mode: {chatMode}
-      </p>
       <p className="text-slate-400 text-xs text-center">
         Responses from system may produce inaccurate or invalid responses - use
         with caution.
@@ -153,12 +148,8 @@ function CommandMenu({ workspace, show, handleClick, hide }) {
   if (!show) return null;
   const COMMANDS = [
     {
-      cmd: "/conversation",
-      description: "- switch to chat mode (remembers recent chat history) .",
-    },
-    {
-      cmd: "/query",
-      description: "- switch to query mode (does not remember previous chats).",
+      cmd: "/ecocheckr",
+      description: "- ecocheckr answer with the provided sources",
     },
     { cmd: "/reset", description: "- clear current chat history." },
   ];

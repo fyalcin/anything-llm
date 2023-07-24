@@ -23,7 +23,7 @@ export default function DefaultChatContainer() {
           popMsg ? "chat__message" : ""
         }`}
       >
-        <div className="p-4 max-w-full md:max-w-[75%] bg-orange-100 dark:bg-stone-700 rounded-b-2xl rounded-tr-2xl rounded-tl-sm">
+        <div className="p-4 max-w-full md:max-w-[75%] bg-primary dark:bg-stone-700 rounded-b-2xl rounded-tr-2xl rounded-tl-sm">
           <p className="text-slate-800 dark:text-slate-200 font-[500] md:font-semibold text-sm md:text-base">
             Welcome to AnythingLLM, AnythingLLM is an open-source AI tool by
             Mintplex Labs that turns <i>anything</i> into a trained chatbot you
@@ -41,7 +41,7 @@ export default function DefaultChatContainer() {
           popMsg ? "chat__message" : ""
         }`}
       >
-        <div className="p-4 max-w-full md:max-w-[75%] bg-orange-100 dark:bg-stone-700 rounded-b-2xl rounded-tr-2xl rounded-tl-sm">
+        <div className="p-4 max-w-full md:max-w-[75%] bg-primary dark:bg-stone-700 rounded-b-2xl rounded-tr-2xl rounded-tl-sm">
           <p className="text-slate-800 dark:text-slate-200 font-[500] md:font-semibold text-sm md:text-base">
             AnythingLLM is the easiest way to put powerful AI products like
             OpenAi, GPT-4, LangChain, PineconeDB, ChromaDB, and other services
@@ -58,7 +58,7 @@ export default function DefaultChatContainer() {
           popMsg ? "chat__message" : ""
         }`}
       >
-        <div className="p-4 max-w-full md:max-w-[75%] bg-orange-100 dark:bg-stone-700 rounded-b-2xl rounded-tr-2xl rounded-tl-sm">
+        <div className="p-4 max-w-full md:max-w-[75%] bg-primary dark:bg-stone-700 rounded-b-2xl rounded-tr-2xl rounded-tl-sm">
           <p className="text-slate-800 dark:text-slate-200 font-[500] md:font-semibold text-sm md:text-base">
             AnythingLLM can run totally locally on your machine with little
             overhead you wont even notice it's there! No GPU needed. Cloud and
@@ -101,7 +101,7 @@ export default function DefaultChatContainer() {
           popMsg ? "chat__message" : ""
         }`}
       >
-        <div className="p-4 max-w-full md:max-w-[75%] bg-orange-100 dark:bg-stone-700 rounded-b-2xl rounded-tr-2xl rounded-tl-sm">
+        <div className="p-4 max-w-full md:max-w-[75%] bg-primary dark:bg-stone-700 rounded-b-2xl rounded-tr-2xl rounded-tl-sm">
           <p className="text-slate-800 dark:text-slate-200 font-[500] md:font-semibold text-sm md:text-base">
             It's simple. All collections are organized into buckets we call{" "}
             <b>"Workspaces"</b>. Workspaces are buckets of files, documents,
@@ -145,7 +145,7 @@ export default function DefaultChatContainer() {
           popMsg ? "chat__message" : ""
         }`}
       >
-        <div className="p-4 max-w-full md:max-w-[75%] bg-orange-100 dark:bg-stone-700 rounded-b-2xl rounded-tr-2xl rounded-tl-sm">
+        <div className="p-4 max-w-full md:max-w-[75%] bg-primary dark:bg-stone-700 rounded-b-2xl rounded-tr-2xl rounded-tl-sm">
           <p className="text-slate-800 dark:text-slate-200 font-[500] md:font-semibold text-sm md:text-base">
             AnythingLLM is more than a smarter Dropbox.
             <br />
@@ -190,7 +190,7 @@ export default function DefaultChatContainer() {
           popMsg ? "chat__message" : ""
         }`}
       >
-        <div className="p-4 max-w-full md:max-w-[75%] bg-orange-100 dark:bg-stone-700 rounded-b-2xl rounded-tr-2xl rounded-tl-sm">
+        <div className="p-4 max-w-full md:max-w-[75%] bg-primary dark:bg-stone-700 rounded-b-2xl rounded-tr-2xl rounded-tl-sm">
           <p className="text-slate-800 dark:text-slate-200 font-[500] md:font-semibold text-sm md:text-base">
             Have Fun!
           </p>

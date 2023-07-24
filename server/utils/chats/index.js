@@ -60,6 +60,7 @@ function grepCommand(message) {
 }
 
 async function chatWithWorkspace(workspace, message, chatMode = "chat") {
+  const overwritten_chatMode = "chat"; // we want only one modality
   const uuid = uuidv4();
   const openai = new OpenAi();
   const VectorDb = getVectorDbClass();
@@ -115,7 +116,7 @@ async function chatWithWorkspace(workspace, message, chatMode = "chat") {
       response,
       sources,
       message: error,
-    } = await VectorDb[chatMode]({
+    } = await VectorDb[overwritten_chatMode]({
       namespace: workspace.slug,
       input: message,
       workspace,
@@ -132,7 +133,7 @@ async function chatWithWorkspace(workspace, message, chatMode = "chat") {
       };
     }
 
-    const data = { text: response, sources, type: chatMode };
+    const data = { text: response, sources, type: overwritten_chatMode };
     await WorkspaceChats.new({
       workspaceId: workspace.id,
       prompt: message,

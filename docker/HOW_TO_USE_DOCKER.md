@@ -1,5 +1,12 @@
 # How to use Dockerized Anything LLM
 
+## References - Some helpful Docker commands
+
+- `docker-compose restart`: restart Docker container
+- `docker-compose up --build -d`: rebuild Docker container, you need to run this if you changed any file
+- `docker-compose logs -f`: live logs
+- `docker run -it --entrypoint /bin/sh anything-llm:latest`: get a terminal in the container
+
 Use the Dockerized version of AnythingLLM for a much faster and complete startup of AnythingLLM.
 
 ## Requirements

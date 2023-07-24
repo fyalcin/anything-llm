@@ -1,3 +1,19 @@
+# Ecocheckr | Grammarly for Enviromental Claims
+
+This is a fork of AnythingLLM (see below).
+
+Is deployed with digital ocean at <http://beta.ecocheckr.com>, here are the manual deployment steps.
+
+```
+ssh root@104.236.2.221
+cd /home/anything-llm
+git pull
+cd docker
+docker-compose up --build -d
+```
+
+--
+
 # 🤖 AnythingLLM: A full-stack personalized AI assistant
 
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/tim.svg?style=social&label=Follow%20%40Timothy%20Carambat)](https://twitter.com/tcarambat) [![](https://dcbadge.vercel.app/api/server/6UyHPeGZAC?compact=true&style=flat)](https://discord.gg/6UyHPeGZAC)

@@ -82,7 +82,7 @@ ENV NODE_ENV=production
 ENV PATH=/app/collector/v-env/bin:$PATH
 
 # Expose the server port
-EXPOSE 3001
+EXPOSE 80
 
 # Setup the healthcheck
 HEALTHCHECK --interval=1m --timeout=10s --start-period=1m \
