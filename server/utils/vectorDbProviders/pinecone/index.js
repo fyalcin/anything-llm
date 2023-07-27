@@ -95,7 +95,7 @@ const Pinecone = {
       queryRequest: {
         namespace,
         vector: queryVector,
-        topK: 4,
+        topK: 6,
         includeMetadata: true,
       },
     });
